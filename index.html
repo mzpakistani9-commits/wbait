@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>WBAIT — World Best AI Teacher</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0906'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' fill='%23c9a84c' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -77,8 +78,29 @@
     .sec-text .katex,.sol-step-text .katex,.qa-answer .katex{color:var(--gold2);}
     </style>
     <style>
-        body{font-family:'Crimson Pro',Georgia,serif;background:#000;color:#e8d9b0;min-height:100vh;}
+        body{font-family:'Crimson Pro',Georgia,serif;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E") repeat,radial-gradient(58rem 40rem at 12% -10%,rgba(201,168,76,0.12),transparent 62%),radial-gradient(48rem 34rem at 106% 14%,rgba(22,160,133,0.07),transparent 58%),radial-gradient(70rem 48rem at 50% 120%,rgba(201,168,76,0.10),transparent 62%),#0c0906;color:#e8d9b0;min-height:100vh;isolation:isolate;}
         :root{--gold:#c9a84c;--gold2:#e8c96a;--gold3:#f5e199;--gold-dim:#7a5f2a;--bg2:#141009;--bg3:#1c1508;--text2:#bfaa80;--text3:#8a7555;--accent2:#16a085;--danger:#c0392b;--success:#27ae60;}
+
+        /* Atmosphere — slow breathing gold aura + entrance & shine motion. Adds depth
+           over the existing theme without replacing it; light-mode renders clean. */
+        body::after{content:"";position:fixed;inset:-6%;z-index:-1;pointer-events:none;
+            background:radial-gradient(30rem 22rem at 28% -4%,rgba(232,201,106,0.16),transparent 62%),radial-gradient(26rem 20rem at 78% 104%,rgba(232,201,106,0.12),transparent 62%);
+            filter:blur(14px);animation:aurora 16s ease-in-out infinite alternate;}
+        @keyframes aurora{from{transform:translate3d(-2%,-1%,0) scale(1);}to{transform:translate3d(1.5%,2%,0) scale(1.07);}}
+        body.light-mode::after{display:none;}
+        @keyframes riseIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+        @keyframes glowPulse{0%,100%{text-shadow:0 0 18px rgba(232,201,106,0.35);}50%{text-shadow:0 0 34px rgba(232,201,106,0.7);}}
+        @keyframes sheen{from{transform:translateX(-120%) skewX(-18deg);}to{transform:translateX(240%) skewX(-18deg);}}
+        .load-title{animation:glowPulse 2.6s ease-in-out infinite;}
+        .setup-header,.upload-section,.auth-panel,.packages-panel{animation:riseIn .55s ease both;}
+        .setup-header{animation-delay:.05s;}.upload-section{animation-delay:.15s;}.auth-panel{animation-delay:.25s;}.packages-panel{animation-delay:.35s;}
+        .start-btn,.buy-btn,.play-all-btn,.auth-btn{position:relative;overflow:hidden;}
+        .start-btn::after,.buy-btn::after,.play-all-btn::after,.auth-btn:not(.secondary)::after{content:"";position:absolute;top:0;bottom:0;left:0;width:45%;
+            background:linear-gradient(100deg,transparent,rgba(255,255,255,0.35),transparent);transform:translateX(-120%) skewX(-18deg);pointer-events:none;}
+        .start-btn:hover::after,.buy-btn:hover::after,.play-all-btn:hover::after,.auth-btn:not(.secondary):hover::after{animation:sheen .9s ease;}
+        @media (prefers-reduced-motion: reduce){
+            body::after,.load-title,.setup-header,.upload-section,.auth-panel,.packages-panel{animation:none!important;}
+            .start-btn::after,.buy-btn::after,.play-all-btn::after,.auth-btn:not(.secondary)::after{display:none;}}
 
         /* Loading Screen */
         #loadingScreen{position:fixed;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;}
@@ -481,6 +503,7 @@
         body.light-mode .exam-results{background:#ffffff;border-color:#d4c5a0;}
         body.light-mode .graph-svg-wrap{background:#f5f2ed;}
         body.light-mode .top-bar{background:rgba(250,248,245,0.95);}
+        body.light-mode{background-image:radial-gradient(60rem 40rem at 12% -12%,rgba(184,134,11,0.05),transparent 60%),radial-gradient(50rem 36rem at 106% 14%,rgba(22,160,133,0.04),transparent 55%);}
         body.light-mode .api-status{color:#4a3d2a;}
         body.light-mode .styled-input,body.light-mode .profile-field input,
         body.light-mode .auth-input,body.light-mode .math-input{background:#ffffff;color:#2c2416;}
