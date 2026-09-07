@@ -494,28 +494,28 @@
         .ms-step-line{padding:0.05rem 0 0.05rem 2.5rem;font-size:0.83rem;color:var(--text2);font-family:'Courier New',monospace;line-height:1.6;}
         .ms-text{font-size:0.85rem;color:var(--text2);line-height:1.7;}
 
-        /* Light mode */
-        body.light-mode{background:#faf8f5;color:#2c2416;--gold:#b8860b;--gold2:#8a6d0b;--gold3:#c9a84c;--gold-dim:#a08030;--bg2:#f0ede6;--bg3:#e8e2d5;--text2:#4a3d2a;--text3:#7a6a50;}
-        body.light-mode .flowchart-wrap{background:rgb(0,0,0)!important;}
+        /* Warm dark — same palette as default, slightly softer / warmer for light-toggle */
+        body.light-mode{background:#18120a;color:#f0dfc0;--gold:#d4b060;--gold2:#eac878;--gold3:#f5e199;--gold-dim:#8a6c30;--bg2:#1e160f;--bg3:#28200f;--text2:#c8ad80;--text3:#9a8460;}
+        body.light-mode::after{display:none;}
+        body.light-mode .flowchart-wrap{background:rgb(10,8,5)!important;}
         body.light-mode .upload-section,body.light-mode .auth-panel,body.light-mode .packages-panel,
         body.light-mode .section-card,body.light-mode .qa-panel,body.light-mode .modal-box,
         body.light-mode .sol-step,body.light-mode .question-card,body.light-mode .flashcard-face,
-        body.light-mode .exam-results{background:#ffffff;border-color:#d4c5a0;}
-        body.light-mode .graph-svg-wrap{background:#f5f2ed;}
-        body.light-mode .top-bar{background:rgba(250,248,245,0.95);}
-        body.light-mode{background-image:radial-gradient(60rem 40rem at 12% -12%,rgba(184,134,11,0.05),transparent 60%),radial-gradient(50rem 36rem at 106% 14%,rgba(22,160,133,0.04),transparent 55%);}
-        body.light-mode .api-status{color:#4a3d2a;}
+        body.light-mode .exam-results{background:#1e160f;border-color:rgba(212,176,96,0.30);}
+        body.light-mode .graph-svg-wrap{background:#1a1208;}
+        body.light-mode .top-bar{background:rgba(24,18,10,0.97);box-shadow:0 4px 16px rgba(0,0,0,0.35);}
+        body.light-mode .api-status{color:#bfaa80;}
         body.light-mode .styled-input,body.light-mode .profile-field input,
-        body.light-mode .auth-input,body.light-mode .math-input{background:#ffffff;color:#2c2416;}
-        body.light-mode .sec-text{color:#2c2416;}
+        body.light-mode .auth-input,body.light-mode .math-input{background:#28200f;color:#f0dfc0;}
+        body.light-mode .sec-text{color:#c8ad80;}
 
 /* Theme presets */
 body.theme-desert{--gold:#d4a056;--gold2:#e8b86a;--gold3:#f0cc90;--gold-dim:#a07030;--bg2:#1a1508;--bg3:#221c10;--text2:#d4b080;--text3:#a08850;--accent2:#c07030;--danger:#a04030;--success:#70a030;}
-body.theme-desert.light-mode{background:#f5f0e0;color:#3a2a10;--gold:#c08030;--gold2:#a06820;--gold3:#c9a060;--gold-dim:#b08840;--bg2:#ede4d0;--bg3:#e4d8c4;--text2:#5a4020;--text3:#8a7040;}
-body.theme-forest{--gold:#7ab84c;--gold2:#8ad06a;--gold3:#a0e080;--gold-dim:#4a7a2a;--bg2:#0a1408;--bg3:#10200c;--text2:#80b060;--text3:#608a40;--accent2:#20a060;--danger:#a04030;--success:#40a050;}
-body.theme-forest.light-mode{background:#f0f5e8;color:#1a2a10;--gold:#608a30;--gold2:#4a7020;--gold3:#70a050;--gold-dim:#709040;--bg2:#e0ecd0;--bg3:#d8e4c8;--text2:#2a4a10;--text3:#4a6a30;}
-body.theme-ocean{--gold:#4a8ab8;--gold2:#6aa0d0;--gold3:#80b8e0;--gold-dim:#2a5a7a;--bg2:#080e14;--bg3:#0c1820;--text2:#60a0c0;--text3:#407a9a;--accent2:#2080b0;--danger:#a04030;--success:#30a080;}
-body.theme-ocean.light-mode{background:#e8f0f5;color:#101a2a;--gold:#306a90;--gold2:#205080;--gold3:#5090b0;--gold-dim:#407090;--bg2:#d0e0ec;--bg3:#c8d8e4;--text2:#102a4a;--text3:#304a6a;}
+body.theme-desert.light-mode{background:#1c1408;color:#f0d8b0;--gold:#e0b050;--gold2:#d0a040;--gold3:#f0cc90;--gold-dim:#9a7020;--bg2:#20180c;--bg3:#2a2010;--text2:#c8b080;--text3:#a09060;}
+        body.theme-forest{--gold:#7ab84c;--gold2:#8ad06a;--gold3:#a0e080;--gold-dim:#4a7a2a;--bg2:#0a1408;--bg3:#10200c;--text2:#80b060;--text3:#608a40;--accent2:#20a060;--danger:#a04030;--success:#40a050;}
+        body.theme-forest.light-mode{background:#101a0c;color:#c8e8b0;--gold:#80c050;--gold2:#6ab040;--gold3:#a0e080;--gold-dim:#60a030;--bg2:#142010;--bg3:#1a2a14;--text2:#90c870;--text3:#70a850;}
+        body.theme-ocean{--gold:#4a8ab8;--gold2:#6aa0d0;--gold3:#80b8e0;--gold-dim:#2a5a7a;--bg2:#080e14;--bg3:#0c1820;--text2:#60a0c0;--text3:#407a9a;--accent2:#2080b0;--danger:#a04030;--success:#30a080;}
+        body.theme-ocean.light-mode{background:#0a1018;color:#b0d0e8;--gold:#5898c0;--gold2:#4888b0;--gold3:#80b8e0;--gold-dim:#387090;--bg2:#0e1820;--bg3:#142030;--text2:#70b0d0;--text3:#5090b0;}
         .light-toggle{background:none;border:1px solid var(--gold-dim);border-radius:50%;width:32px;height:32px;cursor:pointer;color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all 0.3s;}
         .font-btn{background:none;border:1px solid var(--gold-dim);border-radius:4px;width:28px;height:28px;cursor:pointer;color:var(--gold);font-size:0.8rem;display:inline-flex;align-items:center;justify-content:center;transition:all 0.3s;font-weight:bold;}
         .font-btn:hover{background:var(--gold-dim);color:#fff;}
@@ -610,30 +610,30 @@ body.theme-ocean.light-mode{background:#e8f0f5;color:#101a2a;--gold:#306a90;--go
 
         /* ── Professional polish (layered on top; theme/light-mode overrides above are re-asserted) ── */
         .top-bar{background:linear-gradient(180deg,rgba(23,17,10,0.98),rgba(10,7,4,0.94));box-shadow:0 4px 18px rgba(0,0,0,0.45);}
-        body.light-mode .top-bar{background:rgba(250,248,245,0.95);box-shadow:0 4px 18px rgba(92,70,40,0.08);}
+        body.light-mode .top-bar{background:rgba(24,18,10,0.97);box-shadow:0 4px 16px rgba(0,0,0,0.40);}
         .upload-section,.auth-panel,.packages-panel,.section-card,.qa-panel,.modal-box,.flashcard-face,.exam-results,.question-card{
             box-shadow:0 14px 40px rgba(0,0,0,0.5),inset 0 1px 0 rgba(245,225,153,0.05);}
         .upload-section,.auth-panel,.packages-panel,.section-card{border-color:rgba(201,168,76,0.30);}
         body.light-mode .upload-section,body.light-mode .auth-panel,body.light-mode .packages-panel,
         body.light-mode .section-card,body.light-mode .qa-panel,body.light-mode .modal-box,
         body.light-mode .flashcard-face,body.light-mode .exam-results,body.light-mode .question-card{
-            box-shadow:0 10px 30px rgba(92,70,40,0.10),inset 0 1px 0 rgba(255,255,255,0.6);}
+            box-shadow:0 12px 36px rgba(0,0,0,0.45),inset 0 1px 0 rgba(212,176,96,0.06);}
         body.light-mode .upload-section,body.light-mode .auth-panel,body.light-mode .packages-panel,
-        body.light-mode .section-card{border-color:#d4c5a0;}
+        body.light-mode .section-card{border-color:rgba(212,176,96,0.28);}
         .styled-input,.profile-field input,.profile-field select,.auth-input,.upload-btn,.section-card{
             transition:border-color .25s,box-shadow .25s,background .25s,transform .25s;}
         .styled-input:hover,.profile-field input:hover,.profile-field select:hover,.auth-input:hover{border-color:rgba(201,168,76,0.55);}
         .styled-input:focus,.profile-field input:focus,.profile-field select:focus,.auth-input:focus{
             border-color:var(--gold2);box-shadow:0 0 0 3px rgba(201,168,76,0.16);outline:none;}
         body.light-mode .styled-input:hover,body.light-mode .profile-field input:hover,
-        body.light-mode .profile-field select:hover,body.light-mode .auth-input:hover{border-color:#b8860b;}
+        body.light-mode .profile-field select:hover,body.light-mode .auth-input:hover{border-color:rgba(212,176,96,0.50);}
         .upload-btn:hover{border-color:var(--gold2);box-shadow:0 6px 18px rgba(0,0,0,0.35);transform:translateY(-1px);}
         .upload-btn.active{box-shadow:0 6px 18px rgba(201,168,76,0.25);}
         .drop-zone{transition:border-color .25s,background .25s,box-shadow .25s,transform .25s;}
         .drop-zone:hover{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,168,76,0.09);}
         .section-card:hover{transform:translateY(-2px);}
         .package-card{box-shadow:0 10px 30px rgba(0,0,0,0.35);}
-        body.light-mode .package-card{box-shadow:0 8px 24px rgba(92,70,40,0.08);}
+        body.light-mode .package-card{box-shadow:0 10px 30px rgba(0,0,0,0.40);}
     </style>
 </head>
 <body>
