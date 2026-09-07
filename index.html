@@ -78,13 +78,13 @@
     .sec-text .katex,.sol-step-text .katex,.qa-answer .katex{color:var(--gold2);}
     </style>
     <style>
-        body{font-family:'Crimson Pro',Georgia,serif;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E") repeat,radial-gradient(58rem 40rem at 12% -10%,rgba(201,168,76,0.12),transparent 62%),radial-gradient(48rem 34rem at 106% 14%,rgba(22,160,133,0.07),transparent 58%),radial-gradient(70rem 48rem at 50% 120%,rgba(201,168,76,0.10),transparent 62%),#0c0906;color:#e8d9b0;min-height:100vh;isolation:isolate;}
-        :root{--gold:#c9a84c;--gold2:#e8c96a;--gold3:#f5e199;--gold-dim:#7a5f2a;--bg2:#141009;--bg3:#1c1508;--text2:#bfaa80;--text3:#8a7555;--accent2:#16a085;--danger:#c0392b;--success:#27ae60;}
+        body{font-family:'Crimson Pro',Georgia,serif;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E") repeat,radial-gradient(70rem 46rem at 82% -18%,rgba(201,168,76,0.22),transparent 60%),radial-gradient(55rem 40rem at -10% 28%,rgba(22,160,133,0.13),transparent 55%),radial-gradient(46rem 34rem at 50% 118%,rgba(232,201,106,0.16),transparent 62%),linear-gradient(180deg,#17110a 0%,#100b06 55%,#0c0805 100%);color:#e8d9b0;min-height:100vh;isolation:isolate;}
+        :root{--gold:#c9a84c;--gold2:#e8c96a;--gold3:#f5e199;--gold-dim:#7a5f2a;--bg2:#1b1309;--bg3:#251a0c;--text2:#bfaa80;--text3:#8a7555;--accent2:#16a085;--danger:#c0392b;--success:#27ae60;}
 
         /* Atmosphere — slow breathing gold aura + entrance & shine motion. Adds depth
            over the existing theme without replacing it; light-mode renders clean. */
         body::after{content:"";position:fixed;inset:-6%;z-index:-1;pointer-events:none;
-            background:radial-gradient(30rem 22rem at 28% -4%,rgba(232,201,106,0.16),transparent 62%),radial-gradient(26rem 20rem at 78% 104%,rgba(232,201,106,0.12),transparent 62%);
+            background:radial-gradient(32rem 24rem at 28% -4%,rgba(232,201,106,0.20),transparent 62%),radial-gradient(28rem 22rem at 78% 104%,rgba(232,201,106,0.15),transparent 62%);
             filter:blur(14px);animation:aurora 16s ease-in-out infinite alternate;}
         @keyframes aurora{from{transform:translate3d(-2%,-1%,0) scale(1);}to{transform:translate3d(1.5%,2%,0) scale(1.07);}}
         body.light-mode::after{display:none;}
@@ -103,7 +103,7 @@
             .start-btn::after,.buy-btn::after,.play-all-btn::after,.auth-btn:not(.secondary)::after{display:none;}}
 
         /* Loading Screen */
-        #loadingScreen{position:fixed;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;}
+        #loadingScreen{position:fixed;inset:0;background:linear-gradient(180deg,#17110a,#0c0805);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;}
         .load-spinner{width:50px;height:50px;border:3px solid var(--gold-dim);border-top-color:var(--gold2);border-radius:50%;animation:spin 0.8s linear infinite;}
         @keyframes spin{to{transform:rotate(360deg);}}
         .load-title{font-family:'Cinzel',serif;font-size:2rem;color:var(--gold2);margin-top:1rem;letter-spacing:0.15em;}
@@ -607,6 +607,33 @@ body.theme-ocean.light-mode{background:#e8f0f5;color:#101a2a;--gold:#306a90;--go
             .floating-mic{bottom:75px;width:40px;height:40px;font-size:16px;}
             .math-fab{bottom:125px;width:36px;height:36px;font-size:14px;}
         }
+
+        /* ── Professional polish (layered on top; theme/light-mode overrides above are re-asserted) ── */
+        .top-bar{background:linear-gradient(180deg,rgba(23,17,10,0.98),rgba(10,7,4,0.94));box-shadow:0 4px 18px rgba(0,0,0,0.45);}
+        body.light-mode .top-bar{background:rgba(250,248,245,0.95);box-shadow:0 4px 18px rgba(92,70,40,0.08);}
+        .upload-section,.auth-panel,.packages-panel,.section-card,.qa-panel,.modal-box,.flashcard-face,.exam-results,.question-card{
+            box-shadow:0 14px 40px rgba(0,0,0,0.5),inset 0 1px 0 rgba(245,225,153,0.05);}
+        .upload-section,.auth-panel,.packages-panel,.section-card{border-color:rgba(201,168,76,0.30);}
+        body.light-mode .upload-section,body.light-mode .auth-panel,body.light-mode .packages-panel,
+        body.light-mode .section-card,body.light-mode .qa-panel,body.light-mode .modal-box,
+        body.light-mode .flashcard-face,body.light-mode .exam-results,body.light-mode .question-card{
+            box-shadow:0 10px 30px rgba(92,70,40,0.10),inset 0 1px 0 rgba(255,255,255,0.6);}
+        body.light-mode .upload-section,body.light-mode .auth-panel,body.light-mode .packages-panel,
+        body.light-mode .section-card{border-color:#d4c5a0;}
+        .styled-input,.profile-field input,.profile-field select,.auth-input,.upload-btn,.section-card{
+            transition:border-color .25s,box-shadow .25s,background .25s,transform .25s;}
+        .styled-input:hover,.profile-field input:hover,.profile-field select:hover,.auth-input:hover{border-color:rgba(201,168,76,0.55);}
+        .styled-input:focus,.profile-field input:focus,.profile-field select:focus,.auth-input:focus{
+            border-color:var(--gold2);box-shadow:0 0 0 3px rgba(201,168,76,0.16);outline:none;}
+        body.light-mode .styled-input:hover,body.light-mode .profile-field input:hover,
+        body.light-mode .profile-field select:hover,body.light-mode .auth-input:hover{border-color:#b8860b;}
+        .upload-btn:hover{border-color:var(--gold2);box-shadow:0 6px 18px rgba(0,0,0,0.35);transform:translateY(-1px);}
+        .upload-btn.active{box-shadow:0 6px 18px rgba(201,168,76,0.25);}
+        .drop-zone{transition:border-color .25s,background .25s,box-shadow .25s,transform .25s;}
+        .drop-zone:hover{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,168,76,0.09);}
+        .section-card:hover{transform:translateY(-2px);}
+        .package-card{box-shadow:0 10px 30px rgba(0,0,0,0.35);}
+        body.light-mode .package-card{box-shadow:0 8px 24px rgba(92,70,40,0.08);}
     </style>
 </head>
 <body>
